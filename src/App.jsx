@@ -1,27 +1,27 @@
 import { useState } from "react";
-import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  const handleIncrement = () => {
-    setCount(count + 1);
+  const increment = () => {
+    setCount((prevCount) => prevCount + 1);
   };
 
-  const handleDecrement = () => {
-    setCount(count - 1);
+  const decrement = () => {
+    setCount((prevCount) => prevCount - 1);
   };
 
   return (
-    <div className="container">
-      <h1>Counter App</h1>
+    <div>
+      <h1>Count: {count}</h1>
 
-      <h2>Count:{count}</h2>
+      <button onClick={increment}>
+        Increment
+      </button>
 
-      <div className="buttons">
-        <button onClick={handleIncrement}>Increment</button>
-        <button onClick={handleDecrement}>Decrement</button>
-      </div>
+      <button onClick={decrement}>
+        Decrement
+      </button>
     </div>
   );
 }
